@@ -1,3 +1,4 @@
+python-3.11.9
 Flask==3.0.3
 MarkupSafe==2.1.5
 pandas==2.2.2
@@ -7,3 +8,4 @@ tensorflow==2.17.0
 keras==3.4.1
 reportlab==4.2.2
 gunicorn==23.0.0
+

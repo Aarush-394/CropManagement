@@ -1,13 +1,14 @@
+# Web framework
+flask
+gunicorn
 
-Flask==3.0.3
-MarkupSafe==2.1.5
-pandas==2.2.2
-numpy==1.26.4
-scikit-learn==1.5.1
-tensorflow==2.17.0
-keras==3.4.1
-reportlab==4.2.2
-gunicorn==23.0.0
+# Data science / ML stack
+numpy>=1.26.0
+pandas>=2.2.2
+scikit-learn>=1.3.0
+tensorflow>=2.15.0
 
-
-
+# Build tools required for Python 3.13 (no prebuilt wheels yet)
+cython>=3.0.5
+meson
+ninja

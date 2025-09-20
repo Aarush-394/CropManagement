@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block nav %}
+<li><a href="{{ url_for('index') }}">Home</a></li>
+<li><a href="{{ url_for('crop') }}">Crop</a></li>
+<li><a href="{{ url_for('pesticide_upload') }}" class="active">Pesticide</a></li>
+<li><a href="{{ url_for('fertilizer') }}">Fertilizer</a></li>
+{% endblock %}
+
+{% block body %}
+<div class="container" style="margin-top: 50px; max-width: 600px;">
+  <div class="card result-card text-center p-4 shadow-lg">
+    <h2 class="mb-4">🔎 Pest Identification Result</h2>
+
+    <!-- Uploaded Image -->
+    <img src="{{ url_for('static', filename='uploads/' + img) }}" alt="Uploaded Leaf" class="pest-img mb-3">
+
+    <!-- Pest Name -->
+    <h3 class="text-success">Pest Detected: {{ insect }}</h3>
+
+    <!-- Advice -->
+    <p class="mt-3"><b>Pesticide Recommendation:</b></p>
+    <p class="text-muted">{{ advice }}</p>
+
+    <!-- Download PDF -->
+    <a href="/download_pdf/{{ insect }}/{{ img }}" class="btn btn-primary btn-lg mt-3 w-100" style="border-radius: 10px;">
+      📄 Download Advice (PDF)
+    </a>
+
+    <!-- Back Button -->
+    <a href="{{ url_for('pesticide_upload') }}" class="btn btn-outline-secondary btn-lg mt-2 w-100" style="border-radius: 10px;">
+      ⬅️ Upload Another Image
+    </a>
+  </div>
+</div>
+{% endblock %}

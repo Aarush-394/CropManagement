@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block nav %}
+<li><a href="index.html">Home</a></li>
+<li><a href="CropRecommendation.html">Crop</a></li>
+<li><a href="pesticide" class="active">Pesticide</a></li>
+<li><a href="FertilizerRecommendation.html">Fertilizer</a></li>
+{% endblock %}
+
+{% block body %}
+<div class="container" style="margin-top: 50px; text-align: center;">
+  <h2 class="tm-handwriting-font gold-text">Upload Leaf Image for Pest Detection</h2>
+  <hr class="tm-hr">
+  <form action="{{ url_for('predict_pest') }}" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <input type="file" name="file" accept="image/*" required class="form-control" style="margin: 20px auto; max-width: 400px;">
+    </div>
+    <button type="submit" class="btn btn-success">Predict Pest</button>
+  </form>
+</div>
+{% endblock %}
